@@ -1,0 +1,88 @@
+namespace Activity14App
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void showResultButton1_Click(object sender, EventArgs e) // Show Result method
+        {
+
+            //if the favoriteSportlistbox is not empty, -1 means empty
+            if (favoriteSportListBox2.SelectedIndex > -1)
+            {
+                surveyListBox1.Items.Add("Your favorite sport:" + " " + favoriteSportListBox2.Text);// adds favoriteSportListBox2 text to surveyListBox1
+
+            }
+
+            if (maleRadioButton1.Checked) //Checks if radiobutton is selected
+            {
+                surveyListBox1.Items.Add("Gender: Male"); // adds selected radiobutton to surveylistbox. The same process continues for every radio button
+            }
+            if (femaleRadioButton2.Checked)
+            {
+                surveyListBox1.Items.Add("Gender: Female");
+
+            }
+            if (parisCheckBox2.Checked) //Checks if checkbox is selected. 
+            {
+                surveyListBox1.Items.Add("City you would like to visit: Paris"); // adds selected checkbox to surveylistbox. The same process continues for every checkbox
+
+            }
+            if (dubaiCheckBox1.Checked)
+            {
+                surveyListBox1.Items.Add("City you would like to visit: Dubai");
+
+            }
+
+            if (newYorkCheckBox3.Checked)
+            {
+                surveyListBox1.Items.Add("City you would like to visit: New York");
+
+            }
+
+            if (lasVegasCheckBox4.Checked)
+            {
+                surveyListBox1.Items.Add("City you would like to visit: Las Vegas");
+
+            }
+
+            if (losAngelescheckBox5.Checked)
+            {
+                surveyListBox1.Items.Add("City you would like to visit: Los Angeles");
+
+            }
+
+            
+
+                
+
+
+
+        }
+
+        private void deleteButton2_Click(object sender, EventArgs e) // Delete method
+        {
+            //if listbox is empty
+            if (surveyListBox1.SelectedIndex == -1)
+                MessageBox.Show("Select an item");
+            //if the listbox is not empty, -1 means empty
+            if (surveyListBox1.SelectedIndex > -1)
+                //Remove the selected item in listbox
+                surveyListBox1.Items.RemoveAt(surveyListBox1.SelectedIndex);
+
+            //surveyListBox1.Items.Clear();
+
+
+
+
+        }
+
+        private void exitButton3_Click(object sender, EventArgs e) // Exit method
+        {
+            this.Close();
+        }
+    }
+}
